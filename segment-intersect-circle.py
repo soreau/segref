@@ -46,6 +46,7 @@ def draw_point(color, pt):
 	pygame.draw.ellipse(screen, color, [pt[0] - 2, pt[1] - 2, 4, 4])
 	if (draw_coords):
 		tmp_font = pygame.font.SysFont("arial", 12)
+		pygame.font.Font.set_bold(tmp_font, True)
 		label = tmp_font.render("%d, %d" % (pt[0], pt[1]), 1, (0, 0, 0))
 		screen.blit(label, (pt[0] - 24, pt[1] - 19))
 		label = tmp_font.render("%d, %d" % (pt[0], pt[1]), 1, color)

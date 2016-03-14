@@ -1,0 +1,11 @@
+# README
+#
+# Demonstration of a line segment reflected by a circle
+
+# Dependencies
+-python
+-pygame
+
+1. sudo apt-get install python-pygame
+2. git clone http://github.com/soreau/segment-collisions
+3. python ./segref/segment-intersect-circle.py

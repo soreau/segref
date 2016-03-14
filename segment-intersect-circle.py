@@ -279,6 +279,7 @@ while running:
 		screen.blit(label, (130, 150))
 		screen.blit(label, (130, 170))
 		screen.blit(label, (130, 190))
+		screen.blit(label, (130, 210))
 		label = font.render("Circle and line segment intersection demo", 1, (0,0,0))
 		screen.blit(label, (25, 20))
 		label = font.render("'q' or esc", 1, (0,0,0))

@@ -42,16 +42,18 @@ pygame.font.Font.set_bold(font, True)
 screen = pygame.display.set_mode((width, height))
 last_time = pygame.time.get_ticks()
 
+def draw_coordinates(color, pt):
+	tmp_font = pygame.font.SysFont("arial", 12)
+	pygame.font.Font.set_bold(tmp_font, True)
+	label = tmp_font.render("%d, %d" % (pt[0], pt[1]), 1, (0, 0, 0))
+	screen.blit(label, (pt[0] - 24, pt[1] - 19))
+	label = tmp_font.render("%d, %d" % (pt[0], pt[1]), 1, color)
+	screen.blit(label, (pt[0] - 25, pt[1] - 20))
+
 def draw_point(color, pt):
 	pygame.draw.ellipse(screen, color, [pt[0] - 2, pt[1] - 2, 4, 4])
 	if (draw_coords):
-		tmp_font = pygame.font.SysFont("arial", 12)
-		pygame.font.Font.set_bold(tmp_font, True)
-		label = tmp_font.render("%d, %d" % (pt[0], pt[1]), 1, (0, 0, 0))
-		screen.blit(label, (pt[0] - 24, pt[1] - 19))
-		label = tmp_font.render("%d, %d" % (pt[0], pt[1]), 1, color)
-		screen.blit(label, (pt[0] - 25, pt[1] - 20))
-		
+		draw_coordinates(color, pt)
 
 def draw_line(color, pt_1, pt_2):
 	pygame.draw.line(screen, color, (pt_1[0], pt_1[1]), (pt_2[0], pt_2[1]))
